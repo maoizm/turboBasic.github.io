@@ -1,5 +1,6 @@
 ---
 layout: post
+excerpt_separator:
 title: беремся за грязную работу
 ---
 
