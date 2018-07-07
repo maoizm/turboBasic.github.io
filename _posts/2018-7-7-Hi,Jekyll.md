@@ -1,9 +1,10 @@
 ---
 layout: post
 title: Jekyll
+published: false
 ---
 
-да, и еще: ![Jekyll]({{ site.baseurl }}/images/jekyll.png) [Jekyll](https://jekyllrb.com/) затягивает
+да, и еще: [Jekyll](https://jekyllrb.com/) затягивает
 
 
 
