@@ -30,6 +30,8 @@ body {
   width: 100%;
 }
 
+
+/* fontMainTitle */
 h1, h2, h3, h4, h5, h6 {
   font-family: $fontMainTitle;
   color: $darkerGray;
@@ -198,7 +200,7 @@ img {
   font-weight: 300;
   font-size: 28px;
   letter-spacing: 1px;
-}
+} 
 
 .site-description {
   margin: -5px 0 0 0;
