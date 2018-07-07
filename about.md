@@ -1,15 +1,11 @@
 ---
 layout: page
-title: About
+title: обо
 permalink: /about/
 ---
 
-Some information about you!
+здесь будет информация обо мне
 
-### More Information
+### связаться со мной
 
-A place to include any other types of information that you'd like to include about yourself.
-
-### Contact me
-
-[email@domain.com](mailto:email@domain.com)
+здесь будет или не будет информация о том, как со мной связаться
