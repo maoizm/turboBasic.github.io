@@ -1,3 +1,4 @@
+Sitemap: https://one.hairy.cloud/_site/sitemap.xml
 User-agent: * 
 Disallow: /_includes/
 Disallow: /_layouts/

@@ -11,6 +11,15 @@ description: Алиса в забэкэндье
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://raw.githubusercontent.com/turboBasic/turboBasic.github.io/master/images/penrose.png
 
+# Automatically generate sitemap
+plugins:
+  - jekyll-sitemap
+  
+sitemap:
+    exclude:
+    include_posts:
+        - "/index.html"
+
 #
 # Flags below are optional
 #
