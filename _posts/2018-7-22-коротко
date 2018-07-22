@@ -1,0 +1,61 @@
+# Task runners / helpers
+
+> список составлялся с учетом того, что работаю только с Gulp 4 и только на ES6, соответственоо модули подбирались такие, что умеют красиво работать в данных условиях
+* [gulp-ssh]( https://github.com/teambition/gulp-ssh ). умеет быть и ssh, и scp, sftp 
+* TBC
+
+## ES6 and Gulp 4: year 2018 recommendations about what you should and shouldn't put in your package.json
+(tested on 2018-07-22)
+
+`npm install -g gulp-cli    // CLI устанавливаем глобально `            <br>
+`npm install    gulp@next   // сам движок 4-го Gulp ставим в проект`    <br>
+`npm install --save-dev babel-core babel-preset-env   // любое отклонение от рекомендаций чревато разочарованиями!` <br>
+`mv gulpfile.js gulpfile.babel.js`  <br>
+
+.babelrc :
+```javascript
+{
+    "presets": ["env"]
+}
+```
+Всё должно работать, например
+```javascript
+import gulp    from 'gulp'
+import GulpSSH from 'gulp-ssh'
+
+
+const apache = {
+    src: './apache2.conf',
+    dest: '/etc/apache2'
+}
+
+const config = {
+    host: 'd8',
+    port: 22,
+    username: 'root',
+    agent: process.env["SSH_AUTH_SOCK"]
+}
+
+const gulpSSH = new GulpSSH ({
+    ignoreErrors: false,
+    sshConfig: config
+})
+
+export const copyApache = () =>
+    gulp.src(apache.src)
+    .pipe(
+        gulpSSH.dest(apache.dest)
+    )
+
+export const restartApache = () =>
+    gulpSSH.exec(
+        [ 'systemctl restart apache2' ],
+        { filePath: 'commands.log' }
+    )
+    .pipe(gulp.dest('logs'))
+
+
+export const build = gulp.series( copyApache, restartApache )
+
+export default build
+```
