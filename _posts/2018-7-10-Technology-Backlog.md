@@ -1,7 +1,7 @@
 ---
 layout: post
 excerpt_separator:
-publish: false
+published: false
 title: Technology Backlog
 ---
 Понятно, когда нужно усваивать новые знания, которых у тебя никогда не было. 
